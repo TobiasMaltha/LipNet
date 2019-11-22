@@ -2,7 +2,7 @@
 ## Introduction
 LipNet is a neural network architecture for lipreading, it differs from earlier research within the field, because it maps whole sentences instead of detecting individual words or phoneme’s classification [1] (“A phoneme is the smallest unit of sound in a word that makes a difference in its pronunciation, as well as its meaning, from another word”[2]). When done by humans lipreading is a difficult practice, this is due to fact that most of the movement besides that of the lips, tongue and teeth are latent and it can be difficult to interpret the words without the context of the sentence. In the perspective of machine lipreading the task is challenging, because it must factor in both the position and the motion of the mouth as features from a video input. Despite of these challenges LipNet has showed promising results regarding lipreading [1].
 
-Data and preprocessing
+## Data and preprocessing
 LipNet is trained on the GRID corpus dataset, this consists of 34 persons who each narrates 1000 sentences. However, there are some missing and corrupt videos which results in 28775 videos, that are used for the training of LipNet. The dataset is based on a specific sentence structure, which is: “command(4) + color(4) + preposition(4) + letter(25) + digit(10) + adverb(4); where the number denotes how many word choices there are for each of the 6 word categories” resulting in a sentence such as “place red at C zero again” [1]. 
 
 They augment the dataset with some simple transformation to reduce overfitting. This is done by training the model on the regular data, horizontally mirrored images, and the videos duplicated at various speeds [1]. 
@@ -20,7 +20,7 @@ Linear layers can learn the average rate of correlation between the input and th
 
 The compiling of the model has been done with Connectionist Temporal Classification (CTC) loss. A rough explanation would be that it computes the probability of a specific sequence by looking at all the sequences that is defined as the specific sentence [1].
 
-Inline-style: 
+
 ![alt text](https://github.com/TobiasMaltha/LipNet/blob/master/arch.PNG "LipNet Arhitecture")
 
 
@@ -43,7 +43,7 @@ The results of LipNet has been accused of being exaggerated, because of the limi
 
 Some have suggested that there would be no more secrets due to LipNet, hinting that it can be used for surveillance. However, the authors behind LipNet have clearly stated that they have no interest in the world of surveillance, since lipreading would require to clearly see the subjects tongue, meaning that the video needs to be straight on, well-lit and at the correct frame rate, making it hard to obtain satisfying data. However, if these requirements were to be fulfilled with a quality camera, the camera would also often have a microphone equipped, that could be used for voice recognition instead [5].
 
-Usage and applications
+## Usage and applications
 Despite the criticisms the authors believe that LipNet could be used on more advanced datasets [5]. Moreover, the authors imagine that LipNet can be used in applications such as improving hearing aids, silently dictating and as an alternative to speech recognition in noisy environments [1][5]. The last suggestions can be seen in this YouTube video:  
 
 
